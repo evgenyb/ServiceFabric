@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceManifest Name="ServiceAPkg"
-                 Version="1.0.0"
+                 Version="Code_#{Service_CodeVersion}_Config_#{MyStatelessService_ConfigVersion}"
                  xmlns="http://schemas.microsoft.com/2011/01/fabric"
                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -11,7 +11,7 @@
   </ServiceTypes>
 
   <!-- El paquete de código es el archivo ejecutable del servicio. -->
-  <CodePackage Name="Code" Version="1.0.0">
+  <CodePackage Name="Code" Version="#{Service_CodeVersion}">
     <EntryPoint>
       <ExeHost>
         <Program>ServiceA.exe</Program>
@@ -21,7 +21,7 @@
 
   <!-- El paquete de configuración es el contenido del directorio Config de PackageRoot que contiene un conjunto de valores 
        de configuración personalizados para el servicio. Este conjunto tiene número de versión y se puede actualizar por separado. -->
-  <ConfigPackage Name="Config" Version="1.0.0" />
+  <ConfigPackage Name="Config" Version="#{MyStatelessService_ConfigVersion}" />
 
   <Resources>
     <Endpoints>
